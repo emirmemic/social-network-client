@@ -1,5 +1,5 @@
 import "./App.css";
-import PostsPage from "./pages/PostsPage";
+import PostsPage from "./pages/Posts/PostsPage";
 import RegisterPage from "./pages/RegisterPage";
 import LoginPage from "./pages/LoginPage";
 import UsersPage from "./pages/UsersPage";

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
+  const navigate = useNavigate();
   const [userData, setUserData] = useState({
     firstName: "",
     lastName: "",
@@ -22,9 +24,14 @@ const Register = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log("Success:", data);
-        // ovdje možeš napraviti redirekciju na neku drugu stranicu
-      })
+        localStorage.removeItem("token");
+        console.log(data);
+        if (data.success === true && data.newUser) {
+          localStorage.setItem("token", data.token);
+          navigate("/posts");
+        }
+        
+          })
       .catch((error) => {
         console.error("Error:", error);
       });
@@ -34,8 +41,7 @@ const Register = () => {
     setUserData((prevState) => ({ ...prevState, [name]: value }));
   };
   return (
-    <div>
-      <h1>Registracija korisnika</h1>
+    <div className="register-wrapper">
       <form onSubmit={handleSubmit}>
         <label>
           E-mail adresa:

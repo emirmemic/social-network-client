@@ -1,0 +1,12 @@
+.main-button-wrapper {
+  background-color: rgb(0, 119, 255);
+  padding: 8px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+  border: none;
+  font-size: 1rem;
+  &:hover {
+    box-shadow: 0 0 2px blue;
+  }
+}

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Button from "../Button/Button";
 
-const NewPostForm = () => {
+const NewPostForm = (props) => {
   const [author, setAuthor] = useState("");
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
@@ -11,28 +12,26 @@ const NewPostForm = () => {
     const post = { author, title, content };
     console.log("Post to be created:", post);
     try {
+      let token = localStorage.getItem("token");
       const response = await axios.post(
-        "http://localhost:3001/createPost",
-        post
+        "http://localhost:3001/api/posts/create",
+        post,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
       );
       console.log("Response:", response.data);
+      props.updatePosts();
     } catch (error) {
       console.log("Error creating post:", error);
     }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="author">Author:</label>
-        <input
-          type="id"
-          id="author"
-          value={author}
-          onChange={(event) => setAuthor(event.target.value)}
-        />
-      </div>
-      <div>
+    <form className="create-post-wrapper">
+      <div className="input-field">
         <label htmlFor="title">Title:</label>
         <input
           type="text"
@@ -41,15 +40,16 @@ const NewPostForm = () => {
           onChange={(event) => setTitle(event.target.value)}
         />
       </div>
-      <div>
+      <div className="input-field">
         <label htmlFor="content">Content:</label>
         <textarea
           id="content"
           value={content}
+          rows={5}
           onChange={(event) => setContent(event.target.value)}
         />
       </div>
-      <button type="submit">Create Post</button>
+      <Button onClick={handleSubmit}>Create Post</Button>
     </form>
   );
 };

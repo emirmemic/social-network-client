@@ -1,38 +1,274 @@
-.container {
-  margin: 50px auto;
-  max-width: 600px;
-  padding: 2rem;
-  border: 1px solid rgb(171, 189, 9);
-  border-radius: 5px;
+.loginWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 50px;
 }
 
-.form-group {
-  margin-bottom: 1rem;
+.loginWrapper label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
 }
 
-label {
-  display: block;
-  margin-bottom: 0.5rem;
-}
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-  width: 100%;
-  padding: 0.5rem;
+.loginWrapper label input {
+  margin-top: 10px;
+  padding: 8px;
   font-size: 1rem;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  width: 300px;
 }
 
-button[type="submit"] {
-  background-color: #007bff;
+.loginWrapper label input:focus {
+  outline: none;
+  border: 2px solid #4caf50;
+}
+
+.loginWrapper button {
+  background-color: #0077ff;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  margin-top: 25px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.loginWrapper button:hover {
+  background-color: #005aff;
+}
+
+.post-wrapper {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #f0f0f0;
+  padding: 15px 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 8px;
+  border-radius: 8px;
+}
+
+.main-button-wrapper {
+  background-color: #0077ff;
+  padding: 8px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+  border: none;
+  font-size: 1rem;
+}
+
+.main-button-wrapper:hover {
+  -webkit-box-shadow: 0 0 2px blue;
+          box-shadow: 0 0 2px blue;
+}
+
+.create-post-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+  background-color: #f0f0f0;
+  padding: 15px 25px;
+  border-radius: 10px;
+}
+
+.create-post-wrapper .input-field {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2px;
+}
+
+.create-post-wrapper .input-field input {
+  padding: 6px 12px;
+}
+
+.posts-page-wrapper .container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 25% 50% 25%;
+      grid-template-columns: 25% 50% 25%;
+  background-color: whitesmoke;
+  min-height: 100vh;
+}
+
+.posts-page-wrapper .container .left,
+.posts-page-wrapper .container .right,
+.posts-page-wrapper .container .center {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 20px 35px;
+}
+
+.posts-page-wrapper .container .center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 12px;
+  background-color: #ebebeb;
+  margin-top: 25px;
+  border-radius: 12px;
+}
+
+.posts-page-wrapper .container .right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.posts-page-wrapper .container .right .main-button-wrapper {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.navbar-wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 25% 50% 25%;
+      grid-template-columns: 25% 50% 25%;
+  background-color: white;
+}
+
+.navbar-wrapper .main-button-wrapper {
+  margin-left: auto;
+  margin-right: 40px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.navbar-wrapper .logo {
+  font-size: 12px;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  color: #2d2da5;
+}
+
+.navbar-wrapper form {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 70% 30%;
+      grid-template-columns: 70% 30%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 50%;
+  margin: auto;
+}
+
+.navbar-wrapper .search-results {
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  position: absolute;
+  top: 40px;
+  left: 0;
+}
+
+.navbar-wrapper .search-results:hover {
+  background-color: #e5e5e5;
+}
+
+.register-wrapper {
+  max-width: 400px;
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.register-wrapper h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.register-wrapper form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.register-wrapper form label {
+  margin-bottom: 10px;
+}
+
+.register-wrapper form label input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%;
+}
+
+.register-wrapper form label input:focus {
+  outline: none;
+  border-color: #0077ff;
+}
+
+.register-wrapper form button[type="submit"] {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #0077ff;
   color: #fff;
-  padding: 0.5rem 1rem;
   border: none;
   border-radius: 5px;
+  font-size: 16px;
   cursor: pointer;
 }
 
-button[type="submit"]:hover {
-  background-color: #0069d9;
+.register-wrapper form button[type="submit"]:hover {
+  background-color: #005aff;
 }
+/*# sourceMappingURL=styles.css.map */

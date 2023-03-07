@@ -1,0 +1,16 @@
+.create-post-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #f0f0f0;
+  padding: 15px 25px;
+  border-radius: 10px;
+  .input-field {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    input {
+      padding: 6px 12px;
+    }
+  }
+}
