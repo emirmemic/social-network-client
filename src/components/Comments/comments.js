@@ -1,19 +1,18 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React from "react";
+import User from "../User/User";
 
 const Comments = (props) => {
-    
-    return(
-        <div>
-         {props.comments && props.comments.map((comment, i) => (
-             <div key={comment._id + "-" + i}>
-             <p>{comment.content}</p>
-             <p>{comment.author.username}</p>
-
-             </div>
-         ))}
-        </div>
-    )
-}
+  return (
+    <div className="comments-wrapper">
+      {props.comments &&
+        props.comments.map((comment, i) => (
+          <div className="comments" key={comment._id + "-" + i}>
+            <User user={comment.author} />
+            <p>{comment.content}</p>
+          </div>
+        ))}
+    </div>
+  );
+};
 
 export default Comments;

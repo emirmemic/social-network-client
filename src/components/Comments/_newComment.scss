@@ -1,0 +1,11 @@
+.new-comment-wrapper {
+  display: grid;
+  grid-template-columns: auto 100px;
+  text-align: center;
+  gap: 10px;
+  input {
+    border-radius: 10px;
+    border: 1px solid gray;
+    padding: 8px 12px;
+  }
+}

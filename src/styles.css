@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
 .loginWrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -71,7 +72,63 @@
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 8px;
+  border: 1px solid gray;
   border-radius: 8px;
+}
+
+.post-wrapper .post {
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding: 8px 12px;
+}
+
+.post-wrapper .post-author {
+  width: 100px;
+  height: 30px;
+  margin-bottom: 5px;
+}
+
+.post-wrapper .post-title {
+  margin-bottom: 5px;
+}
+
+.post-wrapper .post-content {
+  margin-bottom: 5px;
+}
+
+.post-wrapper .controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
+  gap: 10px;
+}
+
+.post-wrapper .controls div {
+  padding: 6px 10px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  text-align: center;
+  cursor: pointer;
+}
+
+.post-wrapper .post-comments {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 8px;
 }
 
 .main-button-wrapper {
@@ -100,6 +157,7 @@
   gap: 10px;
   background-color: #f0f0f0;
   padding: 15px 25px;
+  border: 1px solid gray;
   border-radius: 10px;
 }
 
@@ -115,6 +173,10 @@
 }
 
 .create-post-wrapper .input-field input {
+  padding: 6px 12px;
+}
+
+.create-post-wrapper .input-field textarea {
   padding: 6px 12px;
 }
 
@@ -186,6 +248,10 @@
   margin-top: 15px;
   margin-bottom: 10px;
   color: #2d2da5;
+}
+
+.navbar-wrapper input {
+  padding: 5px;
 }
 
 .navbar-wrapper form {
@@ -270,5 +336,79 @@
 
 .register-wrapper form button[type="submit"]:hover {
   background-color: #005aff;
+}
+
+.user-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 8px;
+  padding: 5px;
+}
+
+.user-wrapper .profile-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background-color: gray;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.comments-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: calc(100% - 110px);
+}
+
+.comments-wrapper .comments {
+  border: 1px solid gray;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding: 8px 12px;
+}
+
+.comments-wrapper p {
+  margin-left: 50px;
+}
+
+.new-comment-wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto 100px;
+      grid-template-columns: auto 100px;
+  text-align: center;
+  gap: 10px;
+}
+
+.new-comment-wrapper input {
+  border-radius: 10px;
+  border: 1px solid gray;
+  padding: 8px 12px;
+}
+
+.postShare-wrapper {
+  width: 50%;
+  margin: auto;
+  padding-top: 25px;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
 }
 /*# sourceMappingURL=styles.css.map */

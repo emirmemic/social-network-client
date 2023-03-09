@@ -1,0 +1,14 @@
+.comments-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 110px);
+  .comments {
+    border: 1px solid gray;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 8px 12px;
+  }
+  p {
+    margin-left: 50px;
+  }
+}

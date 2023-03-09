@@ -13,7 +13,7 @@ const Register = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    fetch("http://localhost:3001/api/auth/register", {
+    fetch(process.env.REACT_APP_API + "/api/auth/register", {
       method: "POST",
       mode: "cors",
 

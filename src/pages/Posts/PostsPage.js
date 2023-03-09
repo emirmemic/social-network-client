@@ -13,7 +13,7 @@ const PostsPage = () => {
     try {
       let token = localStorage.getItem("token");
       const response = await axios.get(
-        "http://localhost:3001/api/posts/getAll",
+        process.env.REACT_APP_API + "/api/posts/getAll",
         {
           headers: {
             Authorization: `Bearer ${token}`,

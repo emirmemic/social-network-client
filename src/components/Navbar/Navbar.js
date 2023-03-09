@@ -12,7 +12,7 @@ const Navbar = () => {
     if (searchTerm.trim()) {
       try {
         const response = await axios.post(
-          "http://localhost:3001/api/users/searchUsers", {
+          process.env.REACT_APP_API + "/api/users/searchUsers", {
             searchTerm,
           },{
             

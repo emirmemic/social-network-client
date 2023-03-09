@@ -5,5 +5,45 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
+  border: 1px solid gray;
   border-radius: 8px;
+  .post {
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 8px 12px;
+  }
+  .post-author {
+    width: 100px;
+    height: 30px;
+    margin-bottom: 5px;
+  }
+  .post-title {
+    margin-bottom: 5px;
+  }
+  .post-content {
+    margin-bottom: 5px;
+  }
+  .controls {
+    display: flex;
+    align-items: center;
+    justify-content: stretch;
+    gap: 10px;
+    div {
+      padding: 6px 10px;
+      border: 1px solid gray;
+      border-radius: 10px;
+      flex-grow: 1;
+      text-align: center;
+      cursor: pointer;
+    }
+  }
+  .post-comments {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
 }
+
+// post-author">{props.author && props.author.username && props.author.username}</h2>
+//         <h2 className="post-title">{props.title}</h2>
+//         <p className="post-content

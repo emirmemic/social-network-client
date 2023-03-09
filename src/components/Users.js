@@ -5,7 +5,7 @@ function Users() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3001/getUsers").then((res) => {
+    axios.get(process.env.REACT_APP_API + "/getUsers").then((res) => {
       setUsers(res.data);
     });
   }, []);

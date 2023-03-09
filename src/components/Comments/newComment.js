@@ -30,6 +30,7 @@ const NewComment = (props) => {
     <div className="new-comment-wrapper">
       <input
         type="text"
+        placeholder=" Napišite komentar ..."
         value={comment}
         onChange={(event) => {
           setComment(event.target.value);
