@@ -62,6 +62,7 @@ const Navbar = () => {
   }, [searchTerm]);
   // test
 
+  // test 2
   return (
     <div className="navbar-wrapper">
       <div className="logo">
