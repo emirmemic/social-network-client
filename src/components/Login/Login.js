@@ -19,8 +19,10 @@ const Login = () => {
       );
       console.log(response);
       localStorage.removeItem("token");
+      localStorage.removeItem("user");
       if (response.status === 200 && response.data) {
         localStorage.setItem("token", response.data.token);
+        localStorage.setItem("user", response.data.user._id);
         navigate("/posts");
       }
       setEmail("");

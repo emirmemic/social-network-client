@@ -36,6 +36,11 @@
       text-align: center;
       cursor: pointer;
     }
+    .post-likes {
+      border: none;
+      display: flex;
+      align-items: center;
+    }
   }
   .post-comments {
     display: flex;
@@ -43,7 +48,3 @@
     gap: 8px;
   }
 }
-
-// post-author">{props.author && props.author.username && props.author.username}</h2>
-//         <h2 className="post-title">{props.title}</h2>
-//         <p className="post-content

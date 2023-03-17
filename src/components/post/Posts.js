@@ -3,14 +3,15 @@ import NewComment from "../Comments/newComment";
 import Comments from "../Comments/comments";
 import axios from "axios";
 import User from "../User/User";
-import { useParams, useSearchParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import NewLike from "../Likes/newLike";
 
 const Post = (props) => {
   let { id } = useParams();
-
   const [_post, setPost] = useState({});
   const [comments, setComments] = useState([]);
   const [showComments, setShowComments] = useState(id ? true : false);
+
   const handleShare = () => {
     let url = window.location.origin + "/post/" + _post._id;
     navigator.clipboard.writeText(url);
@@ -44,18 +45,18 @@ const Post = (props) => {
           },
         }
       );
-      console.log(response.data);
       setComments(response.data);
     } catch (error) {
       console.log(error);
     }
   };
+
   useEffect(() => {
     if (id) {
       fetchPost();
       getComments(id);
     } else {
-      setPost(props);
+      setPost({ ...props });
       getComments(props._id);
     }
   }, []);
@@ -64,6 +65,7 @@ const Post = (props) => {
       getComments(_post._id);
     }
   }, [showComments]);
+
   return (
     <div className="post-wrapper">
       <div className="post" key={_post._id}>
@@ -72,7 +74,9 @@ const Post = (props) => {
         <p className="post-content">{_post.content}</p>
       </div>
       <div className="controls">
-        <div>Like</div>
+        <div className="post-likes">
+          <NewLike postID={id ? id : props._id} />
+        </div>
         <div
           onClick={() => {
             setShowComments(!showComments);

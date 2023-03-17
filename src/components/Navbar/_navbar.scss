@@ -2,12 +2,7 @@
   display: grid;
   grid-template-columns: 25% 50% 25%;
   background-color: white;
-  .main-button-wrapper {
-    margin-left: auto;
-    margin-right: 40px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
+  
   .logo {
     font-size: 12px;
     text-align: center;
@@ -40,5 +35,11 @@
     &:hover {
       background-color: #e5e5e5;
     }
+  }
+  .user-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
   }
 }

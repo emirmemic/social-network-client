@@ -25,6 +25,7 @@ const Register = () => {
       .then((response) => response.json())
       .then((data) => {
         localStorage.removeItem("token");
+        localStorage.removeItem("user");
         console.log(data);
         if (data.success === true && data.newUser) {
           localStorage.setItem("token", data.token);

@@ -6,21 +6,22 @@ import axios from "axios";
 const Navbar = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [user, setuser] = useState({});
   const navigate = useNavigate();
 
   const handleSearch = async (e) => {
     if (searchTerm.trim()) {
       try {
         const response = await axios.post(
-          process.env.REACT_APP_API + "/api/users/searchUsers", {
+          process.env.REACT_APP_API + "/api/users/searchUsers",
+          {
             searchTerm,
-          },{
-            
+          },
+          {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
-            }
-          },
-          
+            },
+          }
         );
         setSearchResults(response.data);
       } catch (error) {
@@ -31,14 +32,34 @@ const Navbar = () => {
     }
   };
 
+  const getUser = async () => {
+    try {
+      const response = await axios.get(
+        process.env.REACT_APP_API + "/api/users/getCurrentUser",
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
+      setuser(response.data);
+      console.log("current user");
+      console.log(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   const handleLogout = () => {
     localStorage.removeItem("token");
+    localStorage.removeItem("user");
     navigate("/login");
   };
   useEffect(() => {
+    getUser();
+  }, []);
+  useEffect(() => {
     handleSearch();
-    
-  },[searchTerm]);
+  }, [searchTerm]);
 
   return (
     <div className="navbar-wrapper">
@@ -53,13 +74,15 @@ const Navbar = () => {
           onChange={(e) => setSearchTerm(e.target.value)}
         />
         <div className="search-results">
-      {searchResults.map((user) => (
-        <div key={user._id}>{user.username}</div>
-      ))}
-    </div>
+          {searchResults.map((user) => (
+            <div key={user._id}>{user.username}</div>
+          ))}
+        </div>
       </form>
-      
-      <Button onClick={handleLogout}>Logout</Button>
+      <div className="user-info">
+        <h5>{user && user.username}</h5>
+        <Button onClick={handleLogout}>Logout</Button>
+      </div>
     </div>
   );
 };
