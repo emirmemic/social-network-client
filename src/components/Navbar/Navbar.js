@@ -60,7 +60,7 @@ const Navbar = () => {
   useEffect(() => {
     handleSearch();
   }, [searchTerm]);
-
+  // test 2
   return (
     <div className="navbar-wrapper">
       <div className="logo">
