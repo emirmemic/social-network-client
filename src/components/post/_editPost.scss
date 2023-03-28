@@ -1,0 +1,44 @@
+.edit-post-form {
+  form {
+    flex-direction: column;
+    align-items: center;
+
+    input[type="text"],
+    
+    textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 16px;
+      font-family: "Roboto", sans-serif;
+    }
+    textarea {
+      height: 100px;
+    }
+
+    button[type="submit"],
+    button[type="button"] {
+      margin-top: 16px;
+      margin-right: 8px;
+      background-color: rgb(0, 119, 255);
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 16px;
+    }
+
+    button[type="button"] {
+      background-color: #f44336;
+
+      &:hover {
+        background-color: #f22e11;
+      }
+    }
+  }
+}

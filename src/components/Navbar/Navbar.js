@@ -7,7 +7,9 @@ const Navbar = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [user, setuser] = useState({});
+
   const navigate = useNavigate();
+
 
   const handleSearch = async (e) => {
     if (searchTerm.trim()) {
@@ -60,9 +62,7 @@ const Navbar = () => {
   useEffect(() => {
     handleSearch();
   }, [searchTerm]);
-  // test
-
-  // test 2
+  
   return (
     <div className="navbar-wrapper">
       <div className="logo">

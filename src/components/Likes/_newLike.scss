@@ -1,10 +1,12 @@
 .newLike-wrapper {
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    
-    &.liked {
-      background-color: rgb(0, 119, 255);
-      color: #fff;
-    }
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-around;
+
+  &.liked {
+    background-color: rgb(0, 119, 255);
+    color: #fff;
   }
+}

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
 @import "./components/Login/login";
 @import "./components/post/posts";
 @import "./components/Button/button";
@@ -10,7 +10,10 @@
 @import "./components/Comments/comments";
 @import "./components/Comments/newComment";
 @import "./components/post/postShare";
+@import "./components/post/editPost";
 @import "./components/Likes/newLike";
+@import "./components/Comments/editComment";
+
 body {
-    font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }

@@ -1,6 +1,5 @@
 import "./App.css";
 import PostsPage from "./pages/Posts/PostsPage";
-import Post from "./components/post/Posts";
 import RegisterPage from "./pages/RegisterPage";
 import LoginPage from "./pages/LoginPage";
 import UsersPage from "./pages/UsersPage";
@@ -19,6 +18,7 @@ function App() {
           <Route exact path="/users" element={<UsersPage />} />
           <Route exact path="/posts" element={<PostsPage />} />
           <Route exact path="/post/:id" element={<PostShare />} />
+
         </Routes>
       </Router>
     </div>

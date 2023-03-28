@@ -23,6 +23,7 @@ const NewPostForm = (props) => {
         }
       );
       console.log("Response:", response.data);
+      setTitle(""); 
       setContent("");
       props.updatePosts();
     } catch (error) {

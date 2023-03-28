@@ -39,7 +39,7 @@
 
 .loginWrapper label input:focus {
   outline: none;
-  border: 2px solid #4caf50;
+  border: 2px solid #0077ff;
 }
 
 .loginWrapper button {
@@ -74,12 +74,42 @@
   gap: 8px;
   border: 1px solid gray;
   border-radius: 8px;
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 20px;
 }
 
 .post-wrapper .post {
   border: 1px solid gray;
   border-radius: 10px;
   padding: 8px 12px;
+}
+
+.post-wrapper .post .test {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.post-wrapper .post .test .edit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: auto;
+}
+
+.post-wrapper .post .test .edit .control-icon {
+  margin-left: 8px;
+  cursor: pointer;
 }
 
 .post-wrapper .post-author {
@@ -141,6 +171,40 @@
   gap: 8px;
 }
 
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 40%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .main-button-wrapper {
   background-color: #0077ff;
   padding: 8px 14px;
@@ -157,6 +221,7 @@
 }
 
 .create-post-wrapper {
+  font-family: 'Roboto', sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -399,8 +464,46 @@
   padding: 8px 12px;
 }
 
-.comments-wrapper p {
+.comments-wrapper .comments .edit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 8px;
+}
+
+.comments-wrapper .comments .edit .control-icon {
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.comments-wrapper .comments p {
   margin-left: 50px;
+}
+
+.comments-wrapper .modal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.comments-wrapper .modal .modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 40%;
 }
 
 .new-comment-wrapper {
@@ -424,10 +527,64 @@
   padding-top: 25px;
 }
 
+.edit-post-form form {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.edit-post-form form input[type="text"],
+.edit-post-form form textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+}
+
+.edit-post-form form textarea {
+  height: 100px;
+}
+
+.edit-post-form form button[type="submit"],
+.edit-post-form form button[type="button"] {
+  margin-top: 16px;
+  margin-right: 8px;
+  background-color: #0077ff;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 16px;
+}
+
+.edit-post-form form button[type="button"] {
+  background-color: #f44336;
+}
+
+.edit-post-form form button[type="button"]:hover {
+  background-color: #f22e11;
+}
+
 .newLike-wrapper {
   padding: 5px 10px;
   border-radius: 5px;
   cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .newLike-wrapper.liked {
@@ -435,7 +592,62 @@
   color: #fff;
 }
 
+.edit-comment-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.edit-comment-form form {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.edit-comment-form form textarea {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  resize: none;
+}
+
+.edit-comment-form form button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #0077ff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.edit-comment-form form button[type="button"] {
+  margin-left: 10px;
+  background-color: #f44336;
+  color: white;
+}
+
+.edit-comment-form form button[type="button"]:hover {
+  background-color: #f22e11;
+}
+
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 /*# sourceMappingURL=styles.css.map */

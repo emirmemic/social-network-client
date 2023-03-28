@@ -20,6 +20,7 @@ const PostsPage = () => {
           },
         }
       );
+      console.log("post");
       console.log(response.data);
       setPosts(response.data);
     } catch (error) {
@@ -41,7 +42,11 @@ const PostsPage = () => {
         <div className="center">
           <NewPostForm updatePosts={fetchPosts} />
           {posts.map((post, i) => (
-            <Posts key={post._id + "-" + i} {...post} />
+            <Posts
+              key={post._id + "-" + i}
+              {...post}
+              updatePosts={fetchPosts}
+            />
           ))}
         </div>
         <div className="right">Right</div>

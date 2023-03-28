@@ -3,12 +3,34 @@
   flex-direction: column;
   width: calc(100% - 110px);
   .comments {
-    border: 1px solid gray;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    padding: 8px 12px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding: 8px 12px;
+  .edit {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 8px;
+  .control-icon {
+  margin-left: 8px;
+  cursor: pointer;
+  }
   }
   p {
-    margin-left: 50px;
+  margin-left: 50px;
   }
-}
+  }
+  .modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 40%;
+  }
+  }
+  }
